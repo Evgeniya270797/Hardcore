@@ -59,18 +59,16 @@ public class EmailPage extends BasePage{
     }
 
     public EmailPage clickRefreshButton(){
-        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
-        driver.findElement(REFRESH_BUTTON).click();
-        logger.info("Refresh button is clicked");
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.findElement(REFRESH_BUTTON).click();
-        logger.info("Refresh button is clicked");
+        do{
+            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            driver.findElement(REFRESH_BUTTON).click();
+            logger.info("Refresh button is clicked");
+        }while(driver.findElement(By.id("ifmail")).isDisplayed());
         return this;
     }
 
     public EmailPage switchToFrame(){
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ifmail")));
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ifmail")));
         driver.switchTo().frame(driver.findElement(By.id("ifmail")));
         return this;
     }
