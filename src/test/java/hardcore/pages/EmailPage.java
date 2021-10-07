@@ -63,7 +63,7 @@ public class EmailPage extends BasePage{
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
             driver.findElement(REFRESH_BUTTON).click();
             logger.info("Refresh button is clicked");
-        }while(driver.findElement(By.id("ifmail")).isDisplayed());
+        }while(!driver.findElement(By.id("ifmail")).isDisplayed());
         return this;
     }
 
