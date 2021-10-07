@@ -18,6 +18,7 @@ public class CloudPage extends BasePage {
     public CloudPage(WebDriver driver) {
         super(driver);
     }
+
     private final Logger logger = LogManager.getRootLogger();
 
     public CloudPage openPage() {
@@ -48,5 +49,4 @@ public class CloudPage extends BasePage {
         logger.info("Calculator is open");
         return new CloudCalculatorPage(driver);
     }
-
 }

@@ -206,10 +206,10 @@ public class CloudCalculatorPage extends BasePage {
     }
 
     public void checkInformationInVmClassIsRegular() {
-        try{
+        try {
             driver.findElement(INFORMATION_IN_VM_CLASS_IS_REGULAR);
             logger.info("Element with information about VM Class is found ");
-        }catch (NoSuchElementException e){
+        } catch (NoSuchElementException e) {
             logger.error("Element with information about VM Class is Not found ");
             throw e;
         }
@@ -254,5 +254,4 @@ public class CloudCalculatorPage extends BasePage {
             throw e;
         }
     }
-
 }

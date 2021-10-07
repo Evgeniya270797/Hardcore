@@ -10,10 +10,11 @@ import java.util.concurrent.TimeUnit;
 public class DriverSingleton {
     private static WebDriver driver;
 
-    private DriverSingleton(){}
+    private DriverSingleton() {
+    }
 
-    public static WebDriver getDriver(){
-        if (null == driver){
+    public static WebDriver getDriver() {
+        if (null == driver) {
             if ("firefox".equals(System.getProperty("browser"))) {
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
@@ -24,15 +25,13 @@ public class DriverSingleton {
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         }
-
-
         return driver;
     }
 
-    public static void closeDriver(){
-            driver.quit();
-            driver = null;
-        }
+    public static void closeDriver() {
+        driver.quit();
+        driver = null;
     }
+}
 
 

@@ -1,4 +1,5 @@
 package hardcore.service;
+
 import hardcore.model.Instance;
 
 public class InstanceCreator {

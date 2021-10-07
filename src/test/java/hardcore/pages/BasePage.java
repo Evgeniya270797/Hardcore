@@ -11,7 +11,6 @@ public abstract class BasePage {
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
-        this.logger =  LogManager.getRootLogger();
+        this.logger = LogManager.getRootLogger();
     }
-
 }

@@ -1,9 +1,7 @@
 package hardcore.tests;
 
 import hardcore.model.Instance;
-import hardcore.pages.CloudPage;
 import hardcore.service.InstanceCreator;
-import hardcore.tests.CommonConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,7 +10,6 @@ public class TestPrice extends CommonConditions {
     @Test
     public void checkTheSentMessageWithThePrice() {
         Instance testInstance = InstanceCreator.withCredentialsFromProperty();
-
         boolean result = cloudPage
                 .openPage()
                 .expandSearch()

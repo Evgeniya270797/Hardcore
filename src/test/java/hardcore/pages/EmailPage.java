@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
-public class EmailPage extends BasePage{
+public class EmailPage extends BasePage {
 
     private final By LINK_TO_GET_EMAIL = By.xpath("//a[@href='email-generator']");
     private final By BUTTON_TO_COPY_EMAIL = By.xpath("//button[@id='cprnd']");
@@ -52,30 +52,29 @@ public class EmailPage extends BasePage{
         return calculatorPage;
     }
 
-    public EmailPage clickMailButton(){
+    public EmailPage clickMailButton() {
         driver.findElement(MAIL_BUTTON).click();
         logger.info("Main button is clicked");
         return this;
     }
 
-    public EmailPage clickRefreshButton(){
+    public EmailPage clickRefreshButton() {
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
         driver.findElement(REFRESH_BUTTON).click();
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
         driver.findElement(REFRESH_BUTTON).click();
         logger.info("Refresh button is clicked");
-
         return this;
     }
 
-    public EmailPage switchToFrame(){
+    public EmailPage switchToFrame() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ifmail")));
         driver.switchTo().frame(driver.findElement(By.id("ifmail")));
         return this;
     }
 
 
-    public EmailPage getTextFromEmail(){
+    public EmailPage getTextFromEmail() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//td/h3[contains(text(),'USD')]")));
         WebElement text = driver.findElement(By.xpath("//td/h3[contains(text(),'USD')]"));
         textFromMail = text.getText();
@@ -83,9 +82,8 @@ public class EmailPage extends BasePage{
         return this;
     }
 
-    public boolean checkPriceFromEmailAndCalculator(){
+    public boolean checkPriceFromEmailAndCalculator() {
         logger.info("Сhecking the price in the email and in the calculator");
         return calculatorPage.getTextFromCalculator().contains(textFromMail);
     }
-
 }

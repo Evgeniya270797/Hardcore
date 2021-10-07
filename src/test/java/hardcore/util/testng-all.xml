@@ -1,0 +1,8 @@
+<!--<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >-->
+<!--<suite name="All tests" >-->
+<!--    <test name="Calculator Filling">-->
+<!--        <classes>-->
+<!--            <class name="hardcore.tests.TestCalculatorFilling"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--</suite>-->

@@ -3,7 +3,6 @@ package hardcore.tests;
 import hardcore.model.Instance;
 import hardcore.pages.CloudCalculatorPage;
 import hardcore.service.InstanceCreator;
-import hardcore.tests.CommonConditions;
 import org.testng.annotations.Test;
 
 public class TestCalculatorFilling extends CommonConditions {
