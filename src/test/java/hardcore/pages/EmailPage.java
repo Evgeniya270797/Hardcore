@@ -59,7 +59,9 @@ public class EmailPage extends BasePage{
     }
 
     public EmailPage clickRefreshButton(){
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+        driver.findElement(REFRESH_BUTTON).click();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(REFRESH_BUTTON).click();
         logger.info("Refresh button is clicked");
         return this;
